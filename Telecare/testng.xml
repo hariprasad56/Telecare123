@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Telecare">
+ 
+<test name="Medicineapp">
+      <parameter name="browser" value="Chrome"/>
+      <classes>
+   <!-- <class name="com.Telecare.testcases.tc_Login_02"/>-->
+    <!-- <class name="com.Telecare.testcases.tc_AddCustomer_03"/>-->
+       <!--<class name="com.Telecare.testcases.tc_Login_01"/>-->
+      <!-- <class name="com.Telecare.testcases.tc_LoginTidyTangle1"></class>-->
+     <!--  <class name="com.Telecare.testcases.tc_ValidateBookingRequest"></class>-->
+      <class name="com.Telecare.testcases.SubscribeSofaCleanService"></class>
+      </classes>
+  </test>
+ <!-- <test name="Loginverify" >
+      <parameter name="browser" value="chrome"/>
+      <classes>
+     <class name="com.Telecare.testcases.tc_Login_01"/>
+      </classes>
+  </test>-->
+  <!--<test name="Customerverify" >
+      <parameter name="browser" value="chrome"/>
+      <classes>
+     <class name="com.Telecare.testcases.tc_AddCustomer_03"/>
+      </classes>
+  </test>-->
+  <!--<listeners>
+<listener class-name="com.Telecare.utilities.MyListeners"/>
+</listeners>-->
+  </suite>

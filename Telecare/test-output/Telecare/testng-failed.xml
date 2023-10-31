@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Telecare]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Medicineapp(failed)">
+    <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="com.Telecare.testcases.SubscribeSofaCleanService">
+        <methods>
+          <include name="teatDown1"/>
+          <include name="setUp1"/>
+          <include name="sofaCleaning"/>
+          <include name="setup"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.Telecare.testcases.SubscribeSofaCleanService -->
+    </classes>
+  </test> <!-- Medicineapp(failed) -->
+</suite> <!-- Failed suite [Telecare] -->
