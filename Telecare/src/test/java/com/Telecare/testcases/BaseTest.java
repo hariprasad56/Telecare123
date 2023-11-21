@@ -44,12 +44,16 @@ public class BaseTest {
 	public Logger log;
     public static ExtentReports extent; 
 	public static ExtentTest test;
+	SimpleDateFormat sdf;
+	Date date;
+	String dateformat;
+	String Repname;
 	@BeforeSuite
 	public void setUp1()
 	{
-		SimpleDateFormat sdf=new SimpleDateFormat("dd-MM-YYYY,HH.mm.ss");
-		Date date=new Date();
-		String dateformat=sdf.format(date);
+		sdf=new SimpleDateFormat("dd-MM-YYYY,HH.mm.ss");
+		 date=new Date();
+		 dateformat=sdf.format(date);
 		String repName="report"+dateformat+".html";
 		ExtentSparkReporter spark= new ExtentSparkReporter(System.getProperty("user.dir")+"/test-output/"+repName);
 		spark.config().setDocumentTitle("Hydro");
@@ -89,7 +93,7 @@ public class BaseTest {
 	 log=LogManager.getLogger("BaseTest.class");
 	DOMConfigurator.configure("Log4j.xml");
 	//PropertyConfigurator.configure("Log4j.property");
-	driver.get(url1);
+	driver.get(url);
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
@@ -103,7 +107,8 @@ public class BaseTest {
    {
 	   TakesScreenshot shot=(TakesScreenshot)driver;
 	   File src=shot.getScreenshotAs(OutputType.FILE);
-	  File dst =new File(System.getProperty("user.dir")+"/Screenshots/"+tname+".png");
+	   Repname=tname+dateformat+".png";
+	  File dst =new File(System.getProperty("user.dir")+"/Screenshots/"+Repname);
 	  Files.copy(src, dst);
 	   System.out.println("Screenshot taken");
    }
@@ -122,6 +127,7 @@ public class BaseTest {
 	{
 		extent.flush();
 	}
+   
   
 	
 }
